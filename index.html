@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar with Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-slate-300 to-slate-500">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow  min-w-[400 px] rounded-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <a href="#" class="text-xl font-bold text-gray-800"></a>
+        </div>
+
+        <!-- Desktop Links -->
+        <div class="hidden md:flex space-x-4 items-center">
+            <a href="second-page.html" class="text-gray-600 hover:text-gray-800">Home</a>
+            <a href="index.html" class="text-gray-600 hover:text-gray-800">Grid</a>
+            <a href="https://www.linkedin.com/in/your-linkedin" class="text-gray-600 hover:text-gray-800">LinkedIn</a>
+            
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="flex items-center md:hidden">
+          <button id="menu-btn" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+      <a href="second-page.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Home</a>
+      <a href="index.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Grid</a>
+      <a href="https://www.linkedin.com/in/your-linkedin" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">LinkedIn</a>
+    </div>
+  </nav>
+
+
+
+<div class="flex justify-center">
+    <!-- Container for Sections -->
+    <div class="max-w-[1900px] min-w-[360px] grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-1 md:grid-cols-2 md:grid-rows-2 gap-8 m-6">
+        <!-- First Section -->
+        <div class="bg-gradient-to-r from-slate-900 to-slate-700 p-8 shadow-lg rounded-lg md:col-span-2 lg:col-span-1">
+        <h1 class="text-2xl font-bold text-gray-300">Welcome to E-Cell</h1>
+        <p class="mt-2 text-gray-500">Empowering Entrepreneurs of Tomorrow.</p>
+        </div>
+    
+        <!-- Second Section -->
+        <div class="bg-gray-200 p-8 shadow-lg flex justify-center items-center rounded-lg">
+        <img src="https://e-cellmnnit.netlify.app/static/media/logo1.aa59d10dce000c1b6a45.png" alt="E-Cell Logo" class="object-contain h-32">
+        </div>
+    
+        <!-- Third Section -->
+        <div class="bg-white p-8 shadow-lg rounded-lg flex justify-center items-center">
+        <div id="grid-container" class="grid grid-cols-3 gap-4">
+            <!-- 9 Squares -->
+            <div class="w-16 h-16 bg-blue-900 rounded-md cursor-pointer" data-index="1"></div>
+            <div class="w-16 h-16 bg-blue-900 rounded-md cursor-pointer" data-index="2"></div>
+            <div class="w-16 h-16 bg-blue-900 rounded-md cursor-pointer" data-index="3"></div>
+            <div class="w-16 h-16 bg-blue-900 rounded-md cursor-pointer" data-index="4"></div>
+            <div class="w-16 h-16 bg-blue-900 rounded-md cursor-pointer" data-index="5"></div>
+            <div class="w-16 h-16 bg-blue-900 rounded-md cursor-pointer" data-index="6"></div>
+            <div class="w-16 h-16 bg-blue-900 rounded-md cursor-pointer" data-index="7"></div>
+            <div class="w-16 h-16 bg-blue-900 rounded-md cursor-pointer" data-index="8"></div>
+            <div class="w-16 h-16 bg-red-800 rounded-md cursor-pointer" data-index="9"></div>
+        </div>
+        </div>
+    </div>
+</div>
+  
+
+  <script>
+    const squares = document.querySelectorAll('#grid-container div');
+    const clickOrder = [];
+
+    squares.forEach((square, index) => {
+      square.addEventListener('click', () => {
+        if (index === squares.length - 1) {
+          // Advanced: Change all colors in click sequence
+          clickOrder.forEach(i => {
+            squares[i].style.backgroundColor = '#1e3a8a';
+          });
+        } else {
+          // Change individual square color
+          square.style.backgroundColor = '#ef4444';
+          clickOrder.push(index); // Save the order of clicks
+        }
+      });
+    });
+  </script>
+  
+  
+
+  <script>
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
