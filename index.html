@@ -5,29 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Navbar with Tailwind</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-image: url('https://images6.alphacoders.com/119/1191374.jpg');
+      background-size: cover; /* Ensures the image covers the entire body */
+      background-position: center; /* Centers the image */
+      background-repeat: no-repeat; /* Prevents the image from repeating */
+      background-attachment: fixed; /* Optional: Makes the background fixed while scrolling */
+      margin: 0; /* Remove default margin */
+      height: 100vh; /* Ensure the body takes the full viewport height */
+    }
+  </style>
 </head>
-<body class="bg-gradient-to-r from-slate-300 to-slate-500">
+<body class="">
 
   <!-- Navbar -->
-  <nav class="bg-white shadow  min-w-[400 px] rounded-md">
+  <nav class="bg-black shadow  min-w-[400 px] rounded-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16">
         <!-- Logo -->
         <div class="flex items-center">
-          <a href="#" class="text-xl font-bold text-gray-800"></a>
+          <a href="#" class="text-xl font-bold text-gray-100"></a>
         </div>
 
         <!-- Desktop Links -->
         <div class="hidden md:flex space-x-4 items-center">
-            <a href="second-page.html" class="text-gray-600 hover:text-gray-800">Home</a>
-            <a href="index.html" class="text-gray-600 hover:text-gray-800">Grid</a>
-            <a href="https://www.linkedin.com/in/your-linkedin" class="text-gray-600 hover:text-gray-800">LinkedIn</a>
+            <a href="second-page.html" class="text-gray-600 hover:text-gray-100">Home</a>
+            <a href="index.html" class="text-gray-600 hover:text-gray-100">Grid</a>
+            <a href="https://www.linkedin.com/in/your-linkedin" class="text-gray-600 hover:text-gray-100">LinkedIn</a>
             
         </div>
 
         <!-- Hamburger Menu -->
         <div class="flex items-center md:hidden">
-          <button id="menu-btn" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+          <button id="menu-btn" class="text-gray-600 hover:text-gray-100 focus:outline-none">
             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
             </svg>
@@ -37,10 +48,10 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-      <a href="second-page.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Home</a>
-      <a href="index.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Grid</a>
-      <a href="https://www.linkedin.com/in/your-linkedin" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">LinkedIn</a>
+    <div id="mobile-menu" class="bg-black hidden md:hidden bg-white border-t border-gray-200">
+      <a href="second-page.html" class="bg-black block px-4 py-2 text-white hover:bg-gray-100">Home</a>
+      <a href="index.html" class="bg-black block px-4 py-2 text-white hover:bg-gray-100">Grid</a>
+      <a href="https://www.linkedin.com/in/your-linkedin" class="bg-black block px-4 py-2 text-white hover:bg-gray-100">LinkedIn</a>
     </div>
   </nav>
 
